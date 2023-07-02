@@ -14,11 +14,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
     if (empty($dob)) {
         echo "Please fill in the required details";
     }
+    echo "<br>";
 
     echo "Hi $firstName $lastName";
     echo "<br>";
+    echo "<br>";
 
-    if (($dob >= strtotime(21/03) && $dob <= strtotime(19/04))) {
+
+    $today = date('Y-m-d');
+    if($dob == $today){
+        echo "Today is your birthday:)";
+    } else {
+        echo "Today is not your birthday";
+    }
+    echo "<br>";
+    echo "<br>";
+
+    if(is_string($firstName)) {
+        echo "Your first name is a string";
+        echo "<br>";
+        echo "<br>";
+
+        echo "It has" . " " . strlen($firstName) . " " . "characters";
+        echo "<br>";
+
+        $reverseName = strrev($firstName);
+        echo "<br>";
+        echo "Are you looking for a new password?";
+        echo "<br>";
+        echo "What about $reverseName?";
+
+
+    }
+/*     if (($dob >= strtotime("21/03/date('Y')") && $dob <= strtotime("19/04/date('Y')"))) {
         echo "You are an Aries";
     }
     if (($dob >= strtotime("20 April") && $dob <= strtotime("20 May"))) {
@@ -53,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ){
     }
     if (($dob >= strtotime("19 February") && $dob <= strtotime("20 March"))) {
         echo "You are a Pisces";
-    }
+    } */
     
 
 /*  if($dob == (21/03 <> 19/04)) {
